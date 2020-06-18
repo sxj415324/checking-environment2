@@ -93,5 +93,17 @@ public class MarsRoverTest {
         Assert.assertEquals("N", marsRoverPosition.getDirection());
     }
 
+    public void should_minus_coordinatesY_by_1_when_execute_M_command_given_init_position_x0_y0_direction_S( ){
+        //given
+        MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "S"));
+        //when
+        MarsRoverPosition marsRoverPosition = marsRoverTest.execute("M");
+        //then
+        Assert.assertNotNull(marsRoverPosition);
+        Assert.assertEquals(0, marsRoverPosition.getCoordinatesX());
+        Assert.assertEquals(-1, marsRoverPosition.getCoordinatesY());
+        Assert.assertEquals("S", marsRoverPosition.getDirection());
+    }
+
 }
 

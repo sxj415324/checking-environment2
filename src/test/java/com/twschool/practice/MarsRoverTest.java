@@ -32,7 +32,7 @@ public class MarsRoverTest {
     @Test
     public void should_direction_W_when_execute_L_command_given_init_position_x0_y0_direction_N( ){
         //given
-        MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "L"));
+        MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "N"));
         //when
         MarsRoverPosition marsRoverPosition = marsRoverTest.execute("L");
         //then
@@ -41,5 +41,10 @@ public class MarsRoverTest {
         Assert.assertEquals(0, marsRoverPosition.getCoordinatesY());
         Assert.assertEquals("W", marsRoverPosition.getDirection());
     }
+
+
+
+
+
 }
 

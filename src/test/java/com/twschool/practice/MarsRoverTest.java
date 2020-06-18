@@ -120,5 +120,18 @@ public class MarsRoverTest {
         Assert.assertEquals("E", marsRoverPosition.getDirection());
     }
 
+    @Test
+    public void should_direction_W_when_execute_R_command_given_init_position_x0_y0_direction_S( ){
+        //given
+        MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "R"));
+        //when
+        MarsRoverPosition marsRoverPosition = marsRoverTest.execute("S");
+        //then
+        Assert.assertNotNull(marsRoverPosition);
+        Assert.assertEquals(0, marsRoverPosition.getCoordinatesX());
+        Assert.assertEquals(0, marsRoverPosition.getCoordinatesY());
+        Assert.assertEquals("W", marsRoverPosition.getDirection());
+    }
+
 }
 

@@ -30,7 +30,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_direction_W_when_execute_L_command_given_init_position_x0_y0_direction_N( ){
+    public void should_direction_W_when_execute_L_command_given_init_position_x0_y0_direction_N() {
         //given
         MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "N"));
         //when
@@ -43,7 +43,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_direction_E_when_execute_R_command_given_init_position_x0_y0_direction_N( ){
+    public void should_direction_E_when_execute_R_command_given_init_position_x0_y0_direction_N() {
         //given
         MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "N"));
         //when
@@ -56,7 +56,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_minus_coordinatesX_by_f1_when_execute_M_command_given_init_position_x0_y0_direction_W( ){
+    public void should_minus_coordinatesX_by_f1_when_execute_M_command_given_init_position_x0_y0_direction_W() {
         //given
         MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "W"));
         //when
@@ -69,7 +69,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_direction_S_when_execute_L_command_given_init_position_x0_y0_direction_W( ){
+    public void should_direction_S_when_execute_L_command_given_init_position_x0_y0_direction_W() {
         //given
         MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "W"));
         //when
@@ -82,7 +82,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_direction_N_when_execute_R_command_given_init_position_x0_y0_direction_w( ){
+    public void should_direction_N_when_execute_R_command_given_init_position_x0_y0_direction_w() {
         //given
         MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "W"));
         //when
@@ -95,7 +95,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_minus_coordinatesY_by_1_when_execute_M_command_given_init_position_x0_y0_direction_S( ){
+    public void should_minus_coordinatesY_by_1_when_execute_M_command_given_init_position_x0_y0_direction_S() {
         //given
         MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "S"));
         //when
@@ -108,7 +108,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_direction_E_when_execute_L_command_given_init_position_x0_y0_direction_S( ){
+    public void should_direction_E_when_execute_L_command_given_init_position_x0_y0_direction_S() {
         //given
         MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "S"));
         //when
@@ -121,7 +121,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_direction_W_when_execute_R_command_given_init_position_x0_y0_direction_S( ){
+    public void should_direction_W_when_execute_R_command_given_init_position_x0_y0_direction_S() {
         //given
         MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "R"));
         //when
@@ -133,5 +133,18 @@ public class MarsRoverTest {
         Assert.assertEquals("W", marsRoverPosition.getDirection());
     }
 
+    @Test
+    public void should_minus_coordinatesY_by_1_when_execute_M_command_given_init_position_x0_y0_direction_E() {
+        //given
+        MarsRover marsRoverTest = new MarsRover(new MarsRoverPosition(0, 0, "E"));
+        //when
+        MarsRoverPosition marsRoverPosition = marsRoverTest.execute("M");
+        //then
+        Assert.assertNotNull(marsRoverPosition);
+        Assert.assertEquals(1, marsRoverPosition.getCoordinatesX());
+        Assert.assertEquals(0, marsRoverPosition.getCoordinatesY());
+        Assert.assertEquals("E", marsRoverPosition.getDirection());
+
+    }
 }
 

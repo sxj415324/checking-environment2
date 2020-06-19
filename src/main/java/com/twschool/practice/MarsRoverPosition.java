@@ -1,6 +1,10 @@
 package com.twschool.practice;
 
 public class MarsRoverPosition {
+    public static final String N = "N";
+    public static final String W = "W";
+    public static final String S = "S";
+    public static final String E = "E";
     private  int coordinatesX;
     private  int coordinatesY;
     private String direction;
@@ -33,13 +37,13 @@ public class MarsRoverPosition {
     }
 
     public void move() {
-        if("N".equals(getDirection())){
+        if(N.equals(getDirection())){
             setCoordinatesY(getCoordinatesY()+1);
-        }else if("W".equals(getDirection())){
+        }else if(W.equals(getDirection())){
             setCoordinatesX(getCoordinatesX()-1);
-        }else if("S".equals(getDirection())){
+        }else if(S.equals(getDirection())){
             setCoordinatesY(getCoordinatesY()-1);
-        }else if("E".equals(getDirection())){
+        }else if(E.equals(getDirection())){
             setCoordinatesX(getCoordinatesX()+1);
         }
     }

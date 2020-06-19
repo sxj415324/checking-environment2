@@ -31,4 +31,16 @@ public class MarsRoverPosition {
     public void setDirection(String direction) {
         this.direction = direction;
     }
+
+    public void move() {
+        if("N".equals(getDirection())){
+            setCoordinatesY(getCoordinatesY()+1);
+        }else if("W".equals(getDirection())){
+            setCoordinatesX(getCoordinatesX()-1);
+        }else if("S".equals(getDirection())){
+            setCoordinatesY(getCoordinatesY()-1);
+        }else if("E".equals(getDirection())){
+            setCoordinatesX(getCoordinatesX()+1);
+        }
+    }
 }

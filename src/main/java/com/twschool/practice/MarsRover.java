@@ -15,18 +15,22 @@ public class MarsRover {
             if("L".equals(String.valueOf(command.charAt(i)))||"R".equals(String.valueOf(command.charAt(i)))){
                 marsRoverPosition.setDirection(getDirection(marsRoverPosition.getDirection(), String.valueOf(command.charAt(i))));
             }else{
-                if("N".equals(marsRoverPosition.getDirection())){
-                    marsRoverPosition.setCoordinatesY(marsRoverPosition.getCoordinatesY()+1);
-                }else if("W".equals(marsRoverPosition.getDirection())){
-                    marsRoverPosition.setCoordinatesX(marsRoverPosition.getCoordinatesX()-1);
-                }else if("S".equals(marsRoverPosition.getDirection())){
-                    marsRoverPosition.setCoordinatesY(marsRoverPosition.getCoordinatesY()-1);
-                }else if("E".equals(marsRoverPosition.getDirection())){
-                    marsRoverPosition.setCoordinatesX(marsRoverPosition.getCoordinatesX()+1);
-                }
+                move();
             }
         }
         return marsRoverPosition;
+    }
+
+    private void move() {
+        if("N".equals(marsRoverPosition.getDirection())){
+            marsRoverPosition.setCoordinatesY(marsRoverPosition.getCoordinatesY()+1);
+        }else if("W".equals(marsRoverPosition.getDirection())){
+            marsRoverPosition.setCoordinatesX(marsRoverPosition.getCoordinatesX()-1);
+        }else if("S".equals(marsRoverPosition.getDirection())){
+            marsRoverPosition.setCoordinatesY(marsRoverPosition.getCoordinatesY()-1);
+        }else if("E".equals(marsRoverPosition.getDirection())){
+            marsRoverPosition.setCoordinatesX(marsRoverPosition.getCoordinatesX()+1);
+        }
     }
 
     public String getDirection(String direction, String roll) {

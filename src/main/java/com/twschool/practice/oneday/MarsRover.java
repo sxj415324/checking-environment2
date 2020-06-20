@@ -1,4 +1,4 @@
-package com.twschool.practice;
+package com.twschool.practice.oneday;
 
 public class MarsRover {
     public static final String N = "N";

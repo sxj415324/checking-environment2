@@ -1,38 +1,37 @@
-/*package com.twschool.practice;
+package com.twschool.practice;
 
 public class GuessNumberGame {
-    public static final  int MAX_try_times = 6;
-    private GuessNumber guessNumber;
-    private  int leftTryTimes = MAX_try_times;
+    public static final int MAX_TRY_TIMES = 6;
+    private Answer answer;
+    private int lefttryTimes = MAX_TRY_TIMES;
     private GameStatus gameStatus = GameStatus.CONTITNUE;
-
-    public GuessNumberGame(GuessNumber guessNumber){
-        this.guessNumber = guessNumber;
+    public GuessNumberGame(Answer answer) {
+        this.answer = answer;
     }
 
-    public String guess(String inputNumberString){
-        String result = GuessNumber.check(inputNumberString);
+    public String guess(String userAnswer) {
         decreaseTryTimes();
+        String result = answer.compare(userAnswer);
         modifyStatus(result);
         return result;
     }
 
-    public void modifyStatus(String result){
-        if("4A0B".equals(result)){
+    private void modifyStatus(String result) {
+        if ("4A0B".equals(result)){
             gameStatus = GameStatus.SUCCEED;
-        }else if (leftTryTimes == 0){
+        }else if (lefttryTimes == 0){
             gameStatus = GameStatus.FAILED;
         }
     }
 
-    private void decreaseTryTimes(){
-        leftTryTimes --;
+    private void decreaseTryTimes() {
+        lefttryTimes--;
     }
 
-    public GameStatus GameStatus() {
-
+    public GameStatus getStatus() {
         return gameStatus;
     }
-
 }
-*/
+
+
+

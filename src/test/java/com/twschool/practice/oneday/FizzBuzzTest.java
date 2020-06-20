@@ -1,4 +1,4 @@
-package com.twschool.practice;
+package com.twschool.practice.oneday;
 
 import org.junit.Test;
 

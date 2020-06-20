@@ -4,19 +4,21 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
-public class GuessNumber {
-    private String guessNumber;
+//记录并保留了一步步学习到到三种方法
 
-    public GuessNumber(String guessNumber) {
-        this.guessNumber = guessNumber;
-    }
+public class GuessNumber {
+    private final List<String> guessNumber;
 
     public String compare(String inputNumber) {
         return "0A0B";
     }
 
+    public GuessNumber(String guessNumber) {
+        this.guessNumber = Arrays.asList(guessNumber.split(" "));
+    }
+
     public String check(String inputNumberString) {
-        List<String> inputNumber = Arrays.asList(inputNumberString.split(""));
+        List<String> inputNumber = Arrays.asList(inputNumberString.split(" "));
         int ValueAndPositionCorrectCount = 0;
         int ValueIncorrectAndPositionCorrectCount = 0;
         for (int index = 0; index < inputNumber.size(); index++) {
@@ -28,4 +30,5 @@ public class GuessNumber {
         }
         return ValueAndPositionCorrectCount + "A" + ValueIncorrectAndPositionCorrectCount + "B";
     }
+
 }

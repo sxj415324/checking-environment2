@@ -12,7 +12,7 @@ public class GussNumberGenerater{
         String random="";
         int temp=0;
         while(random.length()!=4){
-            temp=r.nextInt(10);//随机获取0~9的数字
+            temp=r.nextInt(10);
             if(tag[temp]==0){
                 random+=temp;
                 tag[temp]=1;

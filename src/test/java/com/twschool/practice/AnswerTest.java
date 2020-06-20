@@ -15,4 +15,15 @@ public class AnswerTest {
         Assert.assertEquals("0A0B",result);
     }
 
+    @Test
+    public void should_return_4A0B_when_input_1234_given_game_answer_1234(){
+        //given
+        Answer answer = new Answer("1234");
+        //when
+        String result = answer.compare("1234");
+        //then
+        Assert.assertNotNull(result);
+        Assert.assertEquals("4A0B",result);
+    }
+
 }
